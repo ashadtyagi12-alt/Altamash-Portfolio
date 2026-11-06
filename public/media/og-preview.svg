@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="ogBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141724" />
+      <stop offset="100%" stop-color="#07080D" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogBg)" />
+  <circle cx="1050" cy="150" r="280" fill="#FF3B47" opacity="0.15" filter="blur(60px)" />
+  
+  <text x="100" y="240" font-family="'Anton', sans-serif" font-size="110" fill="#FFFFFF" letter-spacing="4">ALTAMASH<tspan fill="#FF3B47">.</tspan></text>
+  <text x="100" y="310" font-family="'Plus Jakarta Sans', sans-serif" font-size="28" font-weight="700" fill="#FF3B47" letter-spacing="2">WEBSITE DEVELOPER | PYTHON DEVELOPER | CONTENT CREATOR | AI ADS</text>
+  <text x="100" y="370" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" fill="#9CA3AF">Creating digital experiences that stand out.</text>
+  <line x1="100" y1="440" x2="1100" y2="440" stroke="rgba(255,255,255,0.1)" stroke-width="2" />
+  <text x="100" y="500" font-family="'Plus Jakarta Sans', sans-serif" font-size="20" fill="#E5E7EB">Pilkhuwa, Hapur, UP, India • @developer_altamash</text>
+</svg>

@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-dark: #07080D;
+    --accent-red: #FF3B47;
+  }
+
+  html {
+    background-color: #07080D;
+    color: #F9FAFB;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #07080D;
+    overflow-x: hidden;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><g transform='scale(0.65)'><path d='M 4 3 L 28 15 C 30 16 29.5 18.5 27.5 19.5 L 17 20 L 10 29 C 8.8 30.5 6.5 29.7 6.2 27.7 Z' fill='url(%23redGrad)' stroke='%231a060a' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round'/><path d='M 8 7 L 8 23' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' opacity='0.95'/><path d='M 16 11 L 23 14.5' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' opacity='0.95'/><defs><linearGradient id='redGrad' x1='4' y1='3' x2='28' y2='29' gradientUnits='userSpaceOnUse'><stop offset='0%25' stop-color='%23ff4757'/><stop offset='50%25' stop-color='%23ff2e43'/><stop offset='100%25' stop-color='%23dc2626'/></linearGradient></defs></g></svg>") 3 2, auto;
+  }
+
+  a, button, [role="button"] {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'><g transform='scale(0.65)'><path d='M 4 3 L 28 15 C 30 16 29.5 18.5 27.5 19.5 L 17 20 L 10 29 C 8.8 30.5 6.5 29.7 6.2 27.7 Z' fill='url(%23redGrad)' stroke='%231a060a' stroke-width='3.2' stroke-linejoin='round' stroke-linecap='round'/><path d='M 8 7 L 8 23' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' opacity='0.95'/><path d='M 16 11 L 23 14.5' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' opacity='0.95'/><defs><linearGradient id='redGrad' x1='4' y1='3' x2='28' y2='29' gradientUnits='userSpaceOnUse'><stop offset='0%25' stop-color='%23ff4757'/><stop offset='50%25' stop-color='%23ff2e43'/><stop offset='100%25' stop-color='%23dc2626'/></linearGradient></defs></g></svg>") 3 2, pointer;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #07080D;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1F2432;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #FF3B47;
+  }
+}
+
+/* Typography Helpers */
+.font-display {
+  font-family: 'Anton', 'Bebas Neue', 'Oswald', sans-serif;
+  text-transform: uppercase;
+}
+
+.font-script {
+  font-family: 'Caveat', cursive;
+}
+
+/* Text Mask Reveal Utilities */
+.mask-reveal-wrapper {
+  overflow: hidden;
+  display: block;
+}
+
+.mask-reveal-inner {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mask-reveal-inner.revealed {
+  transform: translateY(0%);
+}
+
+/* Crimson wine gradient for giant hero PORTFOLIO text */
+.hero-giant-text {
+  background: linear-gradient(180deg, #b91c1c 0%, #991b1b 40%, #450a0a 85%, rgba(7, 8, 13, 0.4) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  user-select: none;
+  font-family: 'Anton', 'Bebas Neue', 'Oswald', sans-serif;
+  letter-spacing: 0.005em;
+}
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Infinite Marquee Animation */
+@keyframes marqueeLeft {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-slow {
+  display: flex;
+  width: max-content;
+  animation: marqueeLeft 32s linear infinite;
+}
+
+.animate-marquee-slow:hover {
+  animation-play-state: paused;
+}
+
+/* Subtle glow utility */
+.glow-coral-sm {
+  box-shadow: 0 0 20px rgba(255, 59, 71, 0.35);
+}
+
+.glow-coral-lg {
+  box-shadow: 0 0 50px rgba(255, 59, 71, 0.5);
+}
+
+/* Blueprint Construction Mode Styles */
+.blueprint-frame {
+  position: relative;
+}
+
+.blueprint-frame::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border: 1px dashed rgba(6, 182, 212, 0.35);
+  pointer-events: none;
+  border-radius: inherit;
+  transition: opacity 0.5s ease;
+}
+
+.blueprint-corner {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: #06b6d4;
+  pointer-events: none;
+}
+
+.blueprint-corner-tl {
+  top: -2px;
+  left: -2px;
+  border-top-width: 2px;
+  border-left-width: 2px;
+}
+
+.blueprint-corner-tr {
+  top: -2px;
+  right: -2px;
+  border-top-width: 2px;
+  border-right-width: 2px;
+}
+
+.blueprint-corner-bl {
+  bottom: -2px;
+  left: -2px;
+  border-bottom-width: 2px;
+  border-left-width: 2px;
+}
+
+.blueprint-corner-br {
+  bottom: -2px;
+  right: -2px;
+  border-bottom-width: 2px;
+  border-right-width: 2px;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
